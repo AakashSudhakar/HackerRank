@@ -71,3 +71,63 @@ WHERE ROWNUM = 1;
 SELECT DISTINCT CITY FROM STATION 
 WHERE LOWER(SUBSTR(CITY, 1, 1)) IN ('a', 'e', 'i', 'o', 'u') 
 ORDER BY CITY ASC;
+
+-- Problem #12: Weather Observation Station 7
+
+SELECT DISTINCT CITY FROM STATION
+WHERE LOWER(SUBSTR(CITY, LENGTH(CITY), 1)) IN ('a', 'e', 'i', 'o', 'u')
+ORDER BY CITY ASC;
+
+-- Problem #13: Weather Observation Station 8
+
+SELECT DISTINCT CITY FROM STATION
+WHERE LOWER(SUBSTR(CITY, 1, 1)) IN ('a', 'e', 'i', 'o', 'u') 
+AND LOWER(SUBSTR(CITY, LENGTH(CITY), 1)) IN ('a', 'e', 'i', 'o', 'u')
+ORDER BY CITY ASC;
+
+-- Problem #14: Weather Observation Station 9
+
+SELECT DISTINCT CITY FROM STATION
+WHERE LOWER(SUBSTR(CITY, 1, 1)) NOT IN ('a', 'e', 'i', 'o', 'u')
+ORDER BY CITY ASC;
+
+-- Problem #15: Weather Observation Station 10
+
+SELECT DISTINCT CITY FROM STATION
+WHERE LOWER(SUBSTR(CITY, LENGTH(CITY), 1)) NOT IN ('a', 'e', 'i', 'o', 'u')
+ORDER BY CITY ASC;
+
+-- Problem #16: Weather Observation Station 11
+
+SELECT DISTINCT CITY FROM STATION
+WHERE LOWER(SUBSTR(CITY, 1, 1)) NOT IN ('a', 'e', 'i', 'o', 'u')
+OR LOWER(SUBSTR(CITY, LENGTH(CITY), 1)) NOT IN ('a', 'e', 'i', 'o', 'u')
+ORDER BY CITY ASC;
+
+-- Problem #17: Weather Observation Station 12
+
+SELECT DISTINCT CITY FROM STATION
+WHERE LOWER(SUBSTR(CITY, 1, 1)) NOT IN ('a', 'e', 'i', 'o', 'u')
+AND LOWER(SUBSTR(CITY, LENGTH(CITY), 1)) NOT IN ('a', 'e', 'i', 'o', 'u')
+ORDER BY CITY ASC;
+
+-- Problem #18: Higher Than 75 Marks
+
+SELECT NAME FROM 
+(
+    SELECT NAME, SUBSTR(NAME, LENGTH(NAME) - 2) FROM STUDENTS
+    WHERE MARKS > 75
+    ORDER BY SUBSTR(NAME, LENGTH(NAME) - 2), ID ASC
+);
+
+-- Problem #19: Employee Names
+
+SELECT NAME FROM EMPLOYEE
+ORDER BY NAME;
+
+-- Problem #20: Employee Salaries
+
+SELECT NAME FROM EMPLOYEE
+WHERE SALARY > 2000
+AND MONTHS < 10
+ORDER BY EMPLOYEE_ID;
