@@ -2,6 +2,7 @@
 /* ============================ HackerRank SQL Challenges: Aggregation ============================= */
 /* ================================================================================================= */
    -- AUTHOR: Aakash Sudhakar
+   -- DATABASE: Oracle
 
 
 ------------------------ Problem #1: Revising Aggregations – The Count Function -----------------------
