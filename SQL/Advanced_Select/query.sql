@@ -26,6 +26,28 @@ ORDER BY COUNT(OCCUPATION), OCCUPATION;
 
 -- Problem #3: Occupations
 
+SELECT Doctor, Professor, Singer, Actor FROM
+(
+    SELECT ROW_NUMBER() OVER 
+    (
+        PARTITION BY Occupation 
+        ORDER BY Name
+    ) AS row_number, 
+    Name, Occupation FROM OCCUPATIONS
+)
+PIVOT
+(
+    MAX(Name)
+    FOR Occupation IN 
+    (
+        'Doctor' AS Doctor, 
+        'Professor' AS Professor, 
+        'Singer' AS Singer, 
+        'Actor' AS Actor
+    )
+)
+ORDER BY row_number;
+
 -- Problem #4: Binary Tree Nodes
 
 -- Problem #5: New Companies
