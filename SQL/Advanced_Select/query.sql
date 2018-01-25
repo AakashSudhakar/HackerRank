@@ -1,10 +1,10 @@
-/* ====================================================================================================
-============================= HackerRank SQL Challenges: Advanced Select ==============================
-==================================================================================================== */
--- Author: Aakash Sudhakar
+/* ================================================================================================= */
+/* ========================== HackerRank SQL Challenges: Advanced Select =========================== */
+/* ================================================================================================= */
+   -- AUTHOR: Aakash Sudhakar
 
 
--- Problem #1: Type of Triangle
+------------------------------------- Problem #1: Type of Triangle ------------------------------------
 
 SELECT 
     CASE
@@ -15,7 +15,7 @@ SELECT
     END
 FROM TRIANGLES
 
--- Problem #2: The PADS
+---------------------------------------- Problem #2: The PADS -----------------------------------------
 
 SELECT (NAME || '(' || SUBSTR(OCCUPATION, 1, 1) || ')') FROM OCCUPATIONS
 ORDER BY NAME;
@@ -24,7 +24,8 @@ SELECT ('There are a total of ' || COUNT(OCCUPATION) || ' ' || LOWER(OCCUPATION)
 GROUP BY OCCUPATION
 ORDER BY COUNT(OCCUPATION), OCCUPATION;
 
--- Problem #3: Occupations
+
+--------------------------------------- Problem #3: Occupations ---------------------------------------
 
 SELECT Doctor, Professor, Singer, Actor FROM
 (
@@ -48,6 +49,6 @@ PIVOT
 )
 ORDER BY row_number;
 
--- Problem #4: Binary Tree Nodes
+------------------------------------ Problem #4: Binary Tree Nodes ------------------------------------
 
--- Problem #5: New Companies
+-------------------------------------- Problem #5: New Companies --------------------------------------
