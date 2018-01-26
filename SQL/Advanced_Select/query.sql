@@ -34,7 +34,7 @@ SELECT Doctor, Professor, Singer, Actor FROM
     (
         PARTITION BY Occupation 
         ORDER BY Name
-    ) AS row_number, 
+    ) AS ROW_NUMBER, 
     Name, Occupation FROM OCCUPATIONS
 )
 PIVOT
@@ -48,7 +48,7 @@ PIVOT
         'Actor' AS Actor
     )
 )
-ORDER BY row_number;
+ORDER BY ROW_NUMBER;
 
 ------------------------------------ Problem #4: Binary Tree Nodes ------------------------------------
 
