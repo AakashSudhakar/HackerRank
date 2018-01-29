@@ -13,7 +13,15 @@ WHERE Country.Continent = 'Asia';
 
 -------------------------------------- Problem #2: African Cities -------------------------------------
 
+SELECT City.Name FROM City
+INNER JOIN Country ON City.CountryCode = Country.Code
+WHERE Country.Continent = 'Africa';
+
 -------------------------- Problem #3: Average Population of Each Continent ---------------------------
+
+SELECT Country.Continent, FLOOR(AVG(City.Population)) FROM City 
+INNER JOIN Country ON City.CountryCode = Country.Code
+GROUP BY Country.Continent;
 
 ---------------------------------------- Problem #4: The Report ---------------------------------------
 
