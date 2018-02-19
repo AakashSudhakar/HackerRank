@@ -14,7 +14,7 @@ SELECT
         WHEN (A = B AND A != C) OR (A = C AND A != B) OR (B = C AND B != A) THEN 'Isosceles'
         ELSE 'Scalene'
     END
-FROM TRIANGLES
+FROM TRIANGLES;
 
 ---------------------------------------- Problem #2: The PADS -----------------------------------------
 
